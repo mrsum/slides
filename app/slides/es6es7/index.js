@@ -82,7 +82,7 @@ const Slide = class Slide extends Component {
           </section>
           {/*  slide#3 */}
 
-          <section data-background-image='http://i.giphy.com/5yaou1jFxTV6M.gif'></section>
+          <section data-background-image='https://www.allenpike.com/images/2015/javascript-guy.jpg'></section>
 
           <section>
             <section>
@@ -464,6 +464,7 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
+          <section data-background-image='http://i.giphy.com/3rgXBAe5ZCUNrc952o.gif'></section>
           <section>
             <h4>Module Loaders</h4>
             <pre>
@@ -741,11 +742,603 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
-
-          <section data-background-image='http://i.giphy.com/3rgXBAe5ZCUNrc952o.gif'></section>
+          <section data-background-image='http://i.giphy.com/dM2xuxnJCg4H6.gif'>
+            <h1>ES7 / stage - 0</h1>
+          </section>
 
           <section>
-            <h1>ES7</h1>
+            <h4>Defensible Classes</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  const class Point { 
+                    constructor(x, y) {
+                      public getX() { return x; }
+                      public getY() { return y; }
+                    }
+                    toString() { 
+                      return \`<\$\{this.getX()\}, \$\{this.getY()\}>\`;
+                    }
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Relationships</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // The object x is in the r relationship with what value?
+                  x @ r 
+                  // Store that x is in the r relationship with value y.
+                  x @ r = y; 
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>String.prototype.at</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  'abc𝌆def'.at(3) // → '𝌆'
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Reflect.*</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // If Type(target) is not Object, 
+                  // then throw a TypeError exception.
+                  // Return the result of calling the abstract
+                  // operation IsCallable(target).
+                  Reflect.isCallable(argument);
+                `}
+              </code>
+            </pre>
+            <pre>
+              <code className='js'>
+                {`
+                  // If Type(target) is not Object,
+                  // then throw a TypeError exception.
+                  // Return the result of calling the
+                  // abstract operation IsConstructor(target).
+                  Reflect.isConstructor(argument);
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Additional metaproperties</h4>
+            <pre>
+              <code className='js'>
+                {`
+
+                  let a = function() {};
+
+                  // function object that is currently being 
+                  // evaluated by the running execution context.
+                  a.callee; 
+                  
+                  // number of arguments pass to the function
+                  a.count;
+                  
+                  // array containing the actual 
+                  // arguments passed to the function.
+                  a.arguments;
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Function Bind Syntax</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // :: which performs this binding
+                  // and method extraction.
+                  Promise
+                    .resolve(123)
+                    .then(::console.log);
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Do Expressions</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // do all the flexible things you can do with statements
+                  // while still producing a useful result and plugging
+                  // that back into an expression context.
+
+                  x = do { let t = f(); t * t + 1 };
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Method Parameter Decorators</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  class MyComponent {
+                    refresh(@lastRefreshTime timeStamp) { … }
+                  }
+
+                  export function lastRefreshTime(...) {
+                    // at minimum, the arguments of this function should contain:
+                    // - reference to owner of the parameter (the method)
+                    // - parameter index
+                    // - parameter name
+                    // - is parameter a rest parameter?
+
+                    // store parameter metadata using the same storage mechanism
+                    // as the one used for methods
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Function Expression Decorators</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  scheduleForFrequentReexecution(@memoize function(value) { 
+                    value++
+                  });
+
+                  export function memoize(...) {
+                    // at minimum, the arguments of this function should contain:
+                    // - reference to the decorated function expression
+                    // - arguments passed into the memoize function (if any)
+
+                    // wrap the decorated function expression memoization implementation and return it
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Zones</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // a primitive for context propagation 
+                  // across multiple logically-connected async operations
+                  class Zone {
+                    constructor({ name, parent });
+                    name;
+                    get parent();
+                    fork({ name });
+                    run(callback);
+                    wrap(callback);
+                  }
+
+                  const loadZone = Zone.current.fork({ name: "loading zone" });
+                  window.onload = loadZone.wrap(e => { ... });
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Explicit syntactic opt-in for Tail Calls</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  let factorial = (n, acc = 1) =>
+                    n == 1 ? acc
+                     : continue factorial(n - 1, acc * n);
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Object enumerables</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // Ordered list of keys.
+                  Object.enumerableKeys(obj);
+                `}
+              </code>
+            </pre>
+            <pre>
+              <code className='js'>
+                {`
+                  // Ordered list of Values.
+                  Object.enumerableValues(obj);
+                `}
+              </code>
+            </pre>
+            <pre>
+              <code className='js'>
+                {`
+                  // Ordered list of key value pairs.
+                  Object.enumerableEntries(obj);
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Nested import declarations</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  describe('fancy feature #5', () => {
+                    import { strictEqual } from 'assert';
+
+                    // strictEqual will be avaliable here
+                    it('should work on the client', () => {
+                      import { check } from './client.js';
+                      strictEqual(check(), 'client ok');
+                    });
+                  });
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section data-background-image='http://i.giphy.com/XpoVnTiN66bQI.gif'>
+            <h1>ES7 / stage - 1</h1>
+          </section>
+
+          <section>
+            <h4>export * as ns from 'mod';</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // Exporting the ModuleNameSpace
+                  // object as a named export.
+
+                  export * as ns from 'mod';
+                `}
+              </code>
+            </pre>
+            <h4>export v from 'mod';</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  export v, {x, y as w} from 'mod';
+                  export v, * as ns from 'mod';
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <section>
+              <h4>Observable Constructor</h4>
+              <pre>
+                <code className='js'>
+                  {`
+                    // Observable as a Constructor:
+                    function listen(element, eventName) {
+                        return new Observable(observer => {
+                            // Create an event handler which sends data to the sink
+                            let handler = event => observer.next(event);
+
+                            // Attach the event handler
+                            element.addEventListener(eventName, handler, true);
+
+                            // Return a function which will cancel the event stream
+                            return () => {
+                                // Detach the event handler from the element
+                                element.removeEventListener(eventName, handler, true);
+                            };
+                        });
+                    }
+                  `}
+                </code>
+              </pre>
+            </section>
+
+            <section>
+              <h4>Observable Listenner</h4>
+              <pre>
+                <code className='js'>
+                  {`
+                    // Observable.of creates an Observable
+                    // of the values provided as arguments
+                    Observable.of('R', 'G', 'B').subscribe({
+                      next(color) {
+                        console.log(color);
+                      }
+                    });
+                  `}
+                </code>
+              </pre>
+              <pre>
+                <code className='js'>
+                  {`
+                    // Observable.from converts its
+                    // argument to an Observable.
+                    Observable.from(['R', 'G', 'B']).subscribe({
+                      next(color) {
+                        console.log(color);
+                      }
+                    });
+                  `}
+                </code>
+              </pre>
+            </section>
+          </section>
+
+          <section>
+            <h4>String.prototype.matchAll</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  var str = 'Hello world!!!';
+                  var regexp = /(\w+)\W*/g;
+                  console.log(str.matchAll(regexp));
+
+                  /*
+                    [
+                      {
+                        0: "Hello ",
+                        1: "Hello"
+                        index: 0,
+                        input: "Hello world!!!"
+                      },
+                      {
+                        0: "world!!!",
+                        1: "world"
+                        index: 6,
+                        input: "Hello world!!!"
+                      }
+                    ]
+                  */
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Private Fields</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  class Point {
+                    \`#x=0;\`
+                    \`#y=1;\`
+
+                    constructor() {
+                      this.#x; // 0
+                      this.#y; // 1
+                    }
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Cancelable Promises</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // create promise
+                  new Promise((resolve, reject, cancel) => {
+                    ...
+                  });
+                  
+                  // cancel promise
+                  Promise.cancel(cancelation);
+                  
+                  // new promise events
+                  Promise.then(onFulfilled, onRejected, onCanceled);
+                  Promise.cancelCatch(cancelation => {
+                    ...
+                  });
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Math Extensions</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  Math.map();
+                  Math.scale();
+                  Math.remap();
+                  Math.clamp();
+                  Math.constrain();
+                  Math.toDegrees(double angrad);
+                  Math.toRadians(double angdeg);
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section data-background-image='http://i.giphy.com/l0HlADMS95lBYXUl2.gif'>
+            <h1>ES7 / stage - 2</h1>
+          </section>
+
+          <section>
+            <h4>Asynchronous Iterators</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  asyncIterator.next().then(
+                    result => console.log(result.value)
+                  );
+
+                  for await (let line of readLines(filePath)) {
+                    print(line);
+                  }
+
+                  async function *readLines(path) {
+                    let file = await fileOpen(path);
+                    try {
+                        while (!file.EOF)
+                          yield file.readLine();
+                    } finally {
+                      await file.close();
+                    }
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Class Property Declarations</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // Class instance field
+                  class MyClass {
+                    myProp = 42;
+
+                    constructor() {
+                      console.log(this.myProp); // Prints '42'
+                    }
+                  }
+                `}
+                </code>
+              </pre>
+              <pre>
+                <code className='js'>
+                {`
+
+                  // Static property
+                  class MyClass {
+                    static myStaticProp = 42;
+
+                    constructor() {
+                      console.log(MyClass.myStaticProp); // Prints '42'
+                    }
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>String.prototype.(trimLeft, trimRight)</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  String.prototype.trimLeft('     Meow'); // 'Meow'
+                  String.prototype.trimRight('Meow    '); // 'Meow'
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Class and Property Decorators</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  class C {
+                    @writable(false)
+                    method() { }
+                  }
+
+                  function writable(value) {
+                    return function (target, key, descriptor) {
+                       descriptor.writable = value;
+                       return descriptor;
+                    }
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section data-background-image='http://i.giphy.com/YcNHgQG0iol7q.gif'>
+            <h1>ES7 / stage - 3</h1>
+          </section>
+
+          <section>
+            <h4>Class and Property Decorators</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // String's parse must contains the same
+                  // function body and parameter list as the original.
+                  
+                   // 'function a(){}'
+                  O.gOPD({
+                    get a(){}
+                  }, 'a').get;
+                  
+                   // 'function a(b){}'
+                  O.gOPD({
+                    set a(b){}
+                  }, 'a').set
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Class and Property Decorators</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  // String's parse must contains the same
+                  // function body and parameter list as the original.
+                  
+                   // 'function a(){}'
+                  O.gOPD({
+                    get a(){}
+                  }, 'a').get;
+                  
+                   // 'function a(b){}'
+                  O.gOPD({
+                    set a(b){}
+                  }, 'a').set
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Async Functions</h4>
+            <pre>
+              <code className='js'>
+                {`
+                  async function chainAnimationsAsync(elem, animations) {
+                    let ret = null;
+                    try {
+                      for(const anim of animations) {
+                        ret = await anim(elem);
+                      }
+                    } catch(e) { /* ignore and keep going */ }
+                    return ret;
+                  }
+                `}
+              </code>
+            </pre>
+          </section>
+
+          <section data-background-image='https://raw.githubusercontent.com/babel/logo/master/babel.png'></section>
+
+          <section>
+            <h4 className={styles.link}>https://s.mrsum.ru/#/es6es7</h4>
           </section>
 
         </div>
