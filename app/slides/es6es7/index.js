@@ -28,7 +28,7 @@ const Slide = class Slide extends Component {
       transitionSpeed: 'fast',
 
       // push state history
-      history: true
+      // history: true
     });
   }
 
@@ -39,14 +39,14 @@ const Slide = class Slide extends Component {
       });
     };
 
-    ReactDOM.findDOMNode(this)
-      .querySelectorAll('pre code').forEach(element => {
-        element.firstChild && element.firstChild.nodeValue.length > 0
-          ? element.firstChild.nodeValue = codeFormatting(element)
-          : null;
 
-        hljs.highlightBlock(element);
-      });
+    [].forEach.call(ReactDOM.findDOMNode(this).querySelectorAll('pre code'), function(element) {
+      element.firstChild && element.firstChild.nodeValue.length > 0
+        ? element.firstChild.nodeValue = codeFormatting(element)
+        : null;
+
+      hljs.highlightBlock(element);
+    });
   }
 
   render() {
@@ -56,7 +56,7 @@ const Slide = class Slide extends Component {
 
           {/*  slide#1 */}
           <section
-            data-background-image='http://wallpapercave.com/wp/NNo5yub.jpg'>
+            data-background-image='https://www.pelikan.com/pulse/__v158/exclusive/backgrounds/service/service-dark.jpg'>
             <h1>ES6 / ES7</h1>
             <h6>under the hood</h6>
           </section>
@@ -168,7 +168,7 @@ const Slide = class Slide extends Component {
             </section>
           </section>
 
-          <section data-background-image='http://i.giphy.com/BA37nbRYsqwKI.gif'></section>
+          <section data-background-image='https://i.giphy.com/BA37nbRYsqwKI.gif'></section>
 
           <section>
             <h1>ES6</h1>
@@ -464,7 +464,7 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
-          <section data-background-image='http://i.giphy.com/3rgXBAe5ZCUNrc952o.gif'></section>
+          <section data-background-image='https://i.giphy.com/3rgXBAe5ZCUNrc952o.gif'></section>
           <section>
             <h4>Module Loaders</h4>
             <pre>
@@ -742,7 +742,7 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
-          <section data-background-image='http://i.giphy.com/dM2xuxnJCg4H6.gif'>
+          <section data-background-image='https://i.giphy.com/dM2xuxnJCg4H6.gif'>
             <h1>ES7 / stage - 0</h1>
           </section>
 
@@ -997,7 +997,7 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
-          <section data-background-image='http://i.giphy.com/XpoVnTiN66bQI.gif'>
+          <section data-background-image='https://i.giphy.com/XpoVnTiN66bQI.gif'>
             <h1>ES7 / stage - 1</h1>
           </section>
 
@@ -1171,7 +1171,7 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
-          <section data-background-image='http://i.giphy.com/l0HlADMS95lBYXUl2.gif'>
+          <section data-background-image='https://i.giphy.com/l0HlADMS95lBYXUl2.gif'>
             <h1>ES7 / stage - 2</h1>
           </section>
 
@@ -1268,7 +1268,7 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
-          <section data-background-image='http://i.giphy.com/YcNHgQG0iol7q.gif'>
+          <section data-background-image='https://i.giphy.com/YcNHgQG0iol7q.gif'>
             <h1>ES7 / stage - 3</h1>
           </section>
 
@@ -1338,7 +1338,7 @@ const Slide = class Slide extends Component {
           <section data-background-image='https://raw.githubusercontent.com/babel/logo/master/babel.png'></section>
 
           <section>
-            <h4 className={styles.link}>https://s.mrsum.ru/#/es6es7</h4>
+            <h4 className={styles.link}>https://s.mrsum.ru/#/slides/es6es7</h4>
           </section>
 
         </div>
