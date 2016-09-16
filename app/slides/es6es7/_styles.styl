@@ -1,5 +1,9 @@
 .container
-  background-color #000
+  background-color #fff
+
+.title
+  h1, h6
+    color #fff !important
 
 .list
   p
@@ -11,65 +15,65 @@
 
 :global
   .hljs
-    margin 5px 0
-    border-radius 3px
-    background-color #111
-    overflow auto
     display block
-    &::after
-      top 5px
-      right 10px
-      font-size 10px
-      color #cecece
-      content attr(class)
-      position absolute
-      z-index 1
-
-
-  .hljs,
-  .hljs-subst
-    color #96beff
-
-  .hljs-string,
-  .hljs-meta,
-  .hljs-symbol,
-  .hljs-template-tag,
-  .hljs-template-variable,
-  .hljs-addition
-    color #0dcc61
+    overflow-x auto
+    padding 0.5em
+    background white
+    color black
+  
 
   .hljs-comment,
-  .hljs-quote
-    color #636363
-
-  .hljs-number,
-  .hljs-regexp,
-  .hljs-literal,
-  .hljs-bullet,
-  .hljs-link
-    color #31a354
-
-  .hljs-deletion,
+  .hljs-quote,
   .hljs-variable
-    color #88f
+    color #008000
+  
 
   .hljs-keyword,
   .hljs-selector-tag,
+  .hljs-built_in,
+  .hljs-name,
+  .hljs-tag
+    color #00f
+  
+
+  .hljs-string,
   .hljs-title,
   .hljs-section,
-  .hljs-built_in,
-  .hljs-doctag,
+  .hljs-attribute,
+  .hljs-literal,
+  .hljs-template-tag,
+  .hljs-template-variable,
   .hljs-type,
-  .hljs-tag,
-  .hljs-name,
-  .hljs-selector-id,
-  .hljs-selector-class,
-  .hljs-strong
-    color #e8d320
+  .hljs-addition
+    color #a31515
+  
+
+  .hljs-deletion,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-meta
+    color #2b91af
+  
+
+  .hljs-doctag
+    color #808080
+  
+
+  .hljs-attr
+    color #f00
+  
+
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-link
+    color #00b0e8
+  
+
 
   .hljs-emphasis
     font-style italic
+  
 
-  .hljs-attr,
-  .hljs-attribute
-    color #454f71
+  .hljs-strong
+    font-weight bold
+  
