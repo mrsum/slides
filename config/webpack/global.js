@@ -33,11 +33,10 @@ module.exports = (ENV, ROOT) => {
     // resolves modules
     resolve: {
       extensions: ['', '.js', '.jsx', '.styl'],
-      modulesDirectories: ['node_modules', 'components'],
+      modulesDirectories: ['node_modules'],
       alias: {
         _app: `${ROOT}/app`,
-        _components: `${ROOT}/components`,
-        'rds-components': `${ROOT}/rds-components`
+        _components: `${ROOT}/components`
       }
     },
 
@@ -82,7 +81,7 @@ module.exports = (ENV, ROOT) => {
           ]
         }
       }),
-      new webpack.optimize.CommonsChunkPlugin('vendors', 'assets/js/vendors.[hash].js'),
+      // new webpack.optimize.CommonsChunkPlugin('vendors', 'assets/js/vendors.[hash].js'),
       // create instance for entrypoint index.html building
       new HtmlPlugin({
         title: 'Sum / Slides',

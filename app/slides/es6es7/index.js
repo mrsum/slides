@@ -1,54 +1,10 @@
 'use strict';
 
+// Depends
 import styles from './_styles';
-
-import hljs from 'highlight.js';
-import niceCode from 'js-beautify';
-import Reveal from 'reveal.js';
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
 
 const Slide = class Slide extends Component {
-
-  componentDidMount() {
-    this.highlightCode();
-
-    Reveal.initialize({
-      // Display controls in the bottom right corner
-      controls: true,
-
-      // Display a presentation progress bar
-      progress: true,
-
-      // Display the page number of the current slide
-      slideNumber: true,
-
-      // Transition speed
-      transitionSpeed: 'fast',
-
-      // push state history
-      // history: true
-    });
-  }
-
-  highlightCode() {
-    let codeFormatting = function(element) {
-      return niceCode(element.firstChild.nodeValue, {
-        indent_size: 2
-      });
-    };
-
-
-    [].forEach.call(ReactDOM.findDOMNode(this).querySelectorAll('pre code'), function(element) {
-      element.firstChild && element.firstChild.nodeValue.length > 0
-        ? element.firstChild.nodeValue = codeFormatting(element)
-        : null;
-
-      hljs.highlightBlock(element);
-    });
-  }
-
   render() {
     return (
       <section className={`reveal ${styles.container}`}>
