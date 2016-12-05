@@ -10,4 +10,4 @@ import '_app/assets/stylesheets/vendors/reveal.css';
 import '_app/assets/stylesheets/vendors/reveal-theme.css';
 
 // start router
-new Director.Router(Routes).init('/slides/es6es7');
+new Director.Router(Routes).init('/');

@@ -17,7 +17,7 @@ module.exports = (ENV, ROOT) => {
   // enable stylus loader as css module
   Loaders.push({
     test: /.styl$/,
-    loaders: ['style-loader', 'css-loader?modules&importLoaders=1', 'postcss-loader', 'stylus-loader']
+    loaders: ['style-loader', 'css-loader?modules&importLoaders=1&localIdentName=b-[local]-[hash:base64:5]', 'postcss-loader', 'stylus-loader']
   });
 
   Plugins.push(new ExtractTextPlugin('style.[hash].css', { allChunks: true }));
