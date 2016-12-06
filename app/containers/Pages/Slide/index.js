@@ -3,13 +3,17 @@
 // ======================
 // Depends
 // ======================
-import styles from './_styles';
-import Slides from '_app/slides';
-import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import React, { Component, PropTypes } from 'react';
 import hljs from 'highlight.js';
 import niceCode from 'js-beautify';
 import Reveal from 'reveal.js';
+
+// ======================
+// Stuff
+// ======================
+import styles from './_styles';
+import Slides from '_app/slides';
 
 /**
  * Page component
