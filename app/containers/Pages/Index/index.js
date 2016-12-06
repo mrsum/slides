@@ -1,8 +1,11 @@
 'use strict';
 
-// Deepnds
-import styles from './_styles.styl';
+// ======================
+// Depends
+// ======================
+import styles from './_styles';
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 const PageComponent = class PageComponent extends Component {
 
@@ -18,18 +21,17 @@ const PageComponent = class PageComponent extends Component {
     return (
       <section className={styles.container}>
         <h1>Choose slide:</h1>
-
-        <a href='/#/slides/rship'>
+        <Link to='/slide/rship'>
           <div className={styles.slide}>
             RSHIP
           </div>
-        </a>
+        </Link>
 
-        <a href='/#/slides/es6es7'>
+        <Link to='/slide/es6es7'>
           <div className={styles.slide}>
             ES6 under the hood
           </div>
-        </a>
+        </Link>
 
       </section>
     );

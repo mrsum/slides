@@ -1,20 +1,32 @@
 'use strict';
 
-// define components
+// ------------------------------
+// Depends
+// ------------------------------
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Route, IndexRoute } from 'react-router';
 
+// ------------------------------
+// Layout
+// ------------------------------
+import MainLayout from '_app/containers/Layouts/Main';
+
+// ------------------------------
 // Pages
-import IndexPage from './components/index';
-import PageComponent from './components/page';
+// ------------------------------
+import IndexPage from '_app/containers/Pages/Index';
+import SlidePage from '_app/containers/Pages/Slide';
 
-export default (function(container) {
-  return {
-    '': () => {
-      ReactDOM.render(<IndexPage />, container);
-    },
-    'slides/:id': (id) => {
-      ReactDOM.render(<PageComponent slide={id.toLowerCase()} />, container);
-    }
-  };
-}(document.getElementById('slides')));
+/**
+ * Create routes
+ * @param  {[type]} history [description]
+ * @return {[type]}         [description]
+ */
+export default function() {
+  return (
+    <Route path='/' component={MainLayout}>
+      <IndexRoute component={IndexPage} />
+      <Route path='/slide/:name' component={SlidePage} />
+    </Route>
+  );
+}

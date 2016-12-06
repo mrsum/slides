@@ -1,8 +1,10 @@
 'use strict';
 
+// ======================
 // Depends
+// ======================
 var webpack       = require('webpack');
-var autoprefixer  = require('autoprefixer-core');
+var autoprefixer  = require('autoprefixer');
 var HtmlPlugin    = require('html-webpack-plugin');
 var SvgStore      = require('webpack-svgstore-plugin');
 
@@ -61,7 +63,7 @@ module.exports = (ENV, ROOT) => {
           loader: 'babel',
           query: {
             presets: ['stage-0', 'react'],
-            ignore: ['node_modules', 'bower_components']
+            ignore: ['node_modules']
           },
         }
       ]
@@ -81,10 +83,12 @@ module.exports = (ENV, ROOT) => {
           ]
         }
       }),
-      // new webpack.optimize.CommonsChunkPlugin('vendors', 'assets/js/vendors.[hash].js'),
+
+      new webpack.optimize.CommonsChunkPlugin('vendors', 'assets/js/vendors.[hash].js'),
+
       // create instance for entrypoint index.html building
       new HtmlPlugin({
-        title: 'Sum / Slides',
+        title: 'Mike Doe / Slides',
         chunks: ['application', 'vendors'],
         filename: 'index.html',
         template: `${ROOT}/app/assets/templates/layouts/index.html`
