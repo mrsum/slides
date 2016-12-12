@@ -4,7 +4,7 @@
   "description": "Personal Slides",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --progress --port 8090",
+    "dev": "NODE_ENV=development webpack-dev-server --progress --port 8091",
     "build": "rm -rf dist/* && NODE_ENV=production webpack -p --colors"
   },
   "devDependencies": {
