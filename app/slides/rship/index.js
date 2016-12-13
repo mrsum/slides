@@ -18,14 +18,14 @@ const Slide = class Slide extends Component {
             data-background-image='https://s.mrsum.ru/images/rship/0.jpg'>
             <img src='https://rambler-digital-solutions.github.io/rship/styles/images/logo.svg' width='150px' />
             <h1>RSHIP</h1>
-            <p>A <b>node.js</b> tool for <b>developing</b> and <b>building</b><br/>isomorphic web applications</p>
+            <p><b>Node.js tool</b> which helps you to <b>develop</b> and <b>build</b> isomorphic web applications.</p>
           </section>
 
           <section>
             <h1>SPA</h1>
             <ul>
               <li>Easier state tracking</li>
-              <li>Caching on browser side</li>
+              <li>Caching on the browser side</li>
               <li>No overhead latency on switching 'pages'</li>
             </ul>
           </section>
@@ -37,10 +37,10 @@ const Slide = class Slide extends Component {
           <section>
             <h1>Goals</h1>
             <ul>
-              <li>Good for very responsive sites</li>
-              <li>Don't need to use extra queries to the server</li>
-              <li>Look's like another one client for API</li>
-              <li>Similar codebase</li>
+              <li>Good for responsive sites</li>
+              <li>No need to use extra queries to the server</li>
+              <li>Looks just like another client for API</li>
+              <li>Shared codebase</li>
             </ul>
           </section>
 
@@ -50,11 +50,11 @@ const Slide = class Slide extends Component {
             <h1>Pain</h1>
             <ul>
               <li><b>SEO</b></li>
-              <li>Client/Server code partitioning</li>
+              <li>Client/Server code dublication</li>
               <li>No content if javascript is disabled</li>
               <li>Browser history</li>
-              <li>Speed of initial load</li>
-              <li>Lot of buisenes logic</li>
+              <li>Chubby codebase</li>
+              <li>A lot of buisenes logic</li>
             </ul>
           </section>
 
@@ -71,7 +71,7 @@ const Slide = class Slide extends Component {
             <h1>Goals</h1>
             <ul>
               <li><b>SEO</b></li>
-              <li>Has content if javascript is disabled</li>
+              <li>Works without javascript</li>
             </ul>
           </section>
 
@@ -80,9 +80,9 @@ const Slide = class Slide extends Component {
             data-background-image='http://i.giphy.com/VZ5gRT17YNkn6.gif'>
             <h1>Problems</h1>
             <ul>
-              <li>Developers should maintain two different views for client/server side</li>
-              <li>One zone of responsibility for frontend/backend developers</li>
-              <li>Long time feature developing</li>
+              <li>Different syntax for client/server side views</li>
+              <li>One zone of responsibility for frontend and backend developers</li>
+              <li>Slow feature developing</li>
             </ul>
           </section>
 
@@ -102,34 +102,35 @@ const Slide = class Slide extends Component {
             <h1>Goals</h1>
             <ul>
               <li><b>SEO</b></li>
-              <li>JavaScript code that can run on both the client and server</li>
+              <li>JavaScript that run on client and server</li>
               <li>Looks like another client for API</li>
-              <li>Same routing and view layer</li>
+              <li>Same view and routing layers</li>
               <li>Similar code base</li>
-              <li>Has content if javascript is disabled</li>
+              <li>No content if javascript is disabled</li>
               <li>Easier state tracking</li>
-              <li>Caching on browser side</li>
+              <li>Browser caching</li>
               <li>No overhead latency on switching 'pages'</li>
             </ul>
           </section>
 
           <section>
-            <h1>Problems</h1>
+            <h1>Side effects</h1>
             <ul>
-              <li>Complexity</li>
-              <li>Lot of buisenes logic</li>
-              <li>Developers should have high expierence level</li>
+              <li>A bit more complexity</li>
+              <li>Slightly more of buisenes logic</li>
+              <li>Elevates requirements on developers skills</li>
             </ul>
           </section>
 
           <section>
             <h1>IWA steps:</h1>
-            <ul>
+            <ol>
               <li>Choose libraries</li>
               <li>Read tonn of manuals</li>
               <li>Create prototype</li>
-              <li>Stackoverflow driven development as is</li>
-            </ul>
+              <li>Stackoverflow driven development</li>
+              <li>God bless you :)</li>
+            </ol>
           </section>
 
           <section
@@ -153,7 +154,7 @@ const Slide = class Slide extends Component {
             data-background-image='https://s.mrsum.ru/images/rship/4.jpg'>
             <img src='https://rambler-digital-solutions.github.io/rship/styles/images/logo.svg' width='150px' />
             <h1>RSHIP</h1>
-            <h6>Tool for developing and building isomorphic web apps</h6>
+            <h6>The tool for isomorphic web apps</h6>
           </section>
 
           <section>
@@ -163,12 +164,12 @@ const Slide = class Slide extends Component {
           <section>
             <h1>Features:</h1>
             <ul>
-              <li>No pain with iterable stop/run node.js server</li>
-              <li>Fast recompiling and starting node.js webserver processes</li>
-              <li>Source code compiling and running from RAM over MemoryFS</li>
-              <li>Has instruments for debugging server side code</li>
-              <li>Has CPU and RAM usage metrics</li>
-              <li>Can works globally and locally as part of your project</li>
+              <li>Infinite rerun stop/run node.js server</li>
+              <li>Recompile and start webserver in less then a second</li>
+              <li>Keep and run source code inside RAM (MemoryFS)</li>
+              <li>Instruments for debugging of server side code</li>
+              <li>CPU and RAM usage metrics</li>
+              <li>Installs locally or globally</li>
             </ul>
           </section>
 
@@ -178,18 +179,16 @@ const Slide = class Slide extends Component {
           </section>
 
           <section>
-            <h1>Details</h1>
+            <h1>Technologies</h1>
             <ul>
-              <li>babel.js inside</li>
-              <li>2 webpacks instances</li>
-              <li>websocket server for messages between client/server</li>
-              <li>2 forked process</li>
-              <li>stylus + css modules</li>
+              <li>node.js</li>
+              <li>webpack</li>
+              <li>babel.js</li>
             </ul>
           </section>
 
           <section>
-            <h1>Also RSHIP</h1>
+            <h1>Also RSHIP is</h1>
           </section>
 
           <section>
