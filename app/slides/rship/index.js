@@ -54,7 +54,7 @@ const Slide = class Slide extends Component {
               <li>No content if javascript is disabled</li>
               <li>Browser history</li>
               <li>Chubby codebase</li>
-              <li>A lot of buisenes logic</li>
+              <li>A lot of business logic</li>
             </ul>
           </section>
 
@@ -117,7 +117,7 @@ const Slide = class Slide extends Component {
             <h1>Side effects</h1>
             <ul>
               <li>A bit more complexity</li>
-              <li>Slightly more of buisenes logic</li>
+              <li>Slightly more of business logic</li>
               <li>Elevates requirements on developers skills</li>
             </ul>
           </section>
@@ -238,15 +238,15 @@ const Slide = class Slide extends Component {
           <section
             className={styles.white}
             data-background-image='https://s.mrsum.ru/images/rship/2.jpg'>
-            <a href='https://asciinema.org/a/94353' target='_blank'>
-              <img src='https://asciinema.org/a/94353.png' width='100%'/>
+
+            <a href='https://asciinema.org/a/117g7mc8edmxrbyckvh6qk2j9' target='_blank'>
+              <img src='https://asciinema.org/a/117g7mc8edmxrbyckvh6qk2j9.png' />
             </a>
           </section>
 
           <section>
             <h1>Install & Remove</h1>
-            <p>Work's on yarn by:</p>
-
+            <p>Works on <b>yarn</b> by:</p>
             <pre>
               <code className='bash'>
               {`
@@ -291,7 +291,7 @@ const Slide = class Slide extends Component {
               <li>webpack 2.0</li>
               <li>more examples of isomorphic applications</li>
               <li>recipies and scenarios</li>
-              <li>screencast's</li>
+              <li>screencasts</li>
             </ul>
           </section>
 
