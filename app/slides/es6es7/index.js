@@ -41,7 +41,7 @@ const Slide = class Slide extends Component {
           </section>
           {/*  slide#3 */}
 
-          <section data-background-image='https://www.allenpike.com/images/2015/javascript-guy.jpg'></section>
+          <section data-background-image='https://www.allenpike.com/images/2015/javascript-guy.jpg' />
 
           <section>
             <section>
@@ -127,7 +127,7 @@ const Slide = class Slide extends Component {
             </section>
           </section>
 
-          <section data-background-image='https://i.giphy.com/BA37nbRYsqwKI.gif'></section>
+          <section data-background-image='https://i.giphy.com/BA37nbRYsqwKI.gif' />
 
           <section>
             <h1>ES6</h1>
@@ -611,7 +611,7 @@ const Slide = class Slide extends Component {
             </pre>
           </section>
 
-          <section data-background-image='https://i.giphy.com/3rgXBAe5ZCUNrc952o.gif'></section>
+          <section data-background-image='https://i.giphy.com/3rgXBAe5ZCUNrc952o.gif' />
 
           <section>
             <h4>Generators</h4>
@@ -857,7 +857,7 @@ const Slide = class Slide extends Component {
             </section>
           </section>
 
-          <section data-background-image='https://i.giphy.com/ySggT6TkbhucU.gif'></section>
+          <section data-background-image='https://i.giphy.com/ySggT6TkbhucU.gif' />
 
           <section>
             <h4>Promise</h4>
@@ -1231,7 +1231,7 @@ const Slide = class Slide extends Component {
             </span>
           </section>
 
-          <section data-background-color='#000' data-background-image='https://raw.githubusercontent.com/babel/logo/master/babel.png'></section>
+          <section data-background-color='#000' data-background-image='https://raw.githubusercontent.com/babel/logo/master/babel.png' />
 
           <section data-background-color='#000'>
             <h4 className={styles.link}>https://s.mrsum.ru/#/slides/es6es7</h4>

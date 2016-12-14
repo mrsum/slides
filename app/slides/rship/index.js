@@ -25,7 +25,7 @@ const Slide = class Slide extends Component {
             <h1>SPA</h1>
             <ul>
               <li>Easier state tracking</li>
-              <li>Caching on the browser side</li>
+              <li>Browser side caching</li>
               <li>No overhead latency on switching 'pages'</li>
             </ul>
           </section>
@@ -50,8 +50,8 @@ const Slide = class Slide extends Component {
             <h1>Pain</h1>
             <ul>
               <li><b>SEO</b></li>
-              <li>Client/Server code dublication</li>
-              <li>No content if javascript is disabled</li>
+              <li>Duplication of client/server code </li>
+              <li>No content if JavaScript is disabled</li>
               <li>Browser history</li>
               <li>Chubby codebase</li>
               <li>A lot of business logic</li>
@@ -71,7 +71,7 @@ const Slide = class Slide extends Component {
             <h1>Goals</h1>
             <ul>
               <li><b>SEO</b></li>
-              <li>Works without javascript</li>
+              <li>Works without JavaScript</li>
             </ul>
           </section>
 
@@ -96,17 +96,17 @@ const Slide = class Slide extends Component {
             <h1>Isomorphic<br/>Web App</h1>
           </section>
 
-          <section data-background-image='https://s.mrsum.ru/images/rship/5.jpg'></section>
+          <section data-background-image='https://s.mrsum.ru/images/rship/5.jpg' />
 
           <section>
             <h1>Goals</h1>
             <ul>
               <li><b>SEO</b></li>
-              <li>JavaScript that run on client and server</li>
+              <li>JavaScript which runs on client and server</li>
               <li>Looks like another client for API</li>
               <li>Same view and routing layers</li>
               <li>Similar code base</li>
-              <li>No content if javascript is disabled</li>
+              <li>No content if JavaScript is disabled</li>
               <li>Easier state tracking</li>
               <li>Browser caching</li>
               <li>No overhead latency on switching 'pages'</li>
@@ -117,16 +117,16 @@ const Slide = class Slide extends Component {
             <h1>Side effects</h1>
             <ul>
               <li>A bit more complexity</li>
-              <li>Slightly more of business logic</li>
-              <li>Elevates requirements on developers skills</li>
+              <li>Slightly more business logic</li>
+              <li>Elevates requirements to developer skills</li>
             </ul>
           </section>
 
           <section>
-            <h1>IWA steps:</h1>
+            <h1>IWA steps</h1>
             <ol>
               <li>Choose libraries</li>
-              <li>Read tonn of manuals</li>
+              <li>Read ton of manuals</li>
               <li>Create prototype</li>
               <li>Stackoverflow driven development</li>
               <li>God bless you :)</li>
@@ -192,7 +192,7 @@ const Slide = class Slide extends Component {
           </section>
 
           <section>
-            <h1>Scallable</h1>
+            <h1>Scalable</h1>
           </section>
 
           <section>
@@ -281,7 +281,7 @@ const Slide = class Slide extends Component {
           </section>
 
           <section>
-            <p>You can initialize your own application, with preffered frameworks</p>
+            <p>You can initialize your own application, with preferred frameworks</p>
           </section>
 
           <section>
@@ -290,7 +290,7 @@ const Slide = class Slide extends Component {
               <li>hot and live reload</li>
               <li>webpack 2.0</li>
               <li>more examples of isomorphic applications</li>
-              <li>recipies and scenarios</li>
+              <li>recipes and scenarios</li>
               <li>screencasts</li>
             </ul>
           </section>
